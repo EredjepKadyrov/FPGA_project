@@ -1,0 +1,18 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+  entity e_modulo_counter is
+  port (
+  sl_Clock: in std_logic;
+  KEY: in std_logc_vector(3 downto 0);
+  LEDR: out std_logic_vector(9 downto 0));
+  
+  end entity;
+  
+  architecture a_modulo_counter of e_modulo_counter is
+  
+  
+  begin
+  
+  
+  end architecture;

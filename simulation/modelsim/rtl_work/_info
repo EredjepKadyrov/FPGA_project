@@ -1,0 +1,129 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/FPGA/FPGA_Excercises/07_Exercise_Sheet/07_Task_05/simulation/modelsim
+Ee_modulo_counter
+Z1 w1591802874
+Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z5 8C:/FPGA/FPGA_Excercises/07_Exercise_Sheet/07_Task_05/e_modulo_counter.vhd
+Z6 FC:/FPGA/FPGA_Excercises/07_Exercise_Sheet/07_Task_05/e_modulo_counter.vhd
+l0
+L5
+Vz@Y[UYGNg[VA5CN1PV^E]3
+!s100 [_mUo<41Sb58`4MA;OoC83
+Z7 OV;C;10.5b;63
+32
+Z8 !s110 1591814834
+!i10b 1
+Z9 !s108 1591814834.000000
+Z10 !s90 -reportprogress|300|-work|work|C:/FPGA/FPGA_Excercises/07_Exercise_Sheet/07_Task_05/e_modulo_counter.vhd|
+Z11 !s107 C:/FPGA/FPGA_Excercises/07_Exercise_Sheet/07_Task_05/e_modulo_counter.vhd|
+!i113 1
+Z12 o-work work
+Z13 tExplicit 1 CvgOpt 0
+Aa_modulo_counter
+R2
+R3
+R4
+DEx4 work 16 e_modulo_counter 0 22 z@Y[UYGNg[VA5CN1PV^E]3
+l21
+L14
+VnL]`idE9FdT4TG0SA70>B1
+!s100 jEH?[RT`bYo2BTnj;OEBK3
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Ee_my_coffee_maker_fsm
+Z14 w1591807393
+R3
+R4
+R0
+Z15 8C:/FPGA/FPGA_Excercises/07_Exercise_Sheet/07_Task_05/e_my_coffee_maker_FSM.vhd
+Z16 FC:/FPGA/FPGA_Excercises/07_Exercise_Sheet/07_Task_05/e_my_coffee_maker_FSM.vhd
+l0
+L4
+V3WL]2H5UY;@9IUGoZY_>P1
+!s100 V]V1CVfc0:eDQd=Oi_LLm0
+R7
+32
+Z17 !s110 1591814836
+!i10b 1
+Z18 !s108 1591814836.000000
+Z19 !s90 -reportprogress|300|-work|work|C:/FPGA/FPGA_Excercises/07_Exercise_Sheet/07_Task_05/e_my_coffee_maker_FSM.vhd|
+Z20 !s107 C:/FPGA/FPGA_Excercises/07_Exercise_Sheet/07_Task_05/e_my_coffee_maker_FSM.vhd|
+!i113 1
+R12
+R13
+Aa_my_coffee_maker_fsm
+R3
+R4
+DEx4 work 21 e_my_coffee_maker_fsm 0 22 3WL]2H5UY;@9IUGoZY_>P1
+l68
+L22
+VkgPz0OAgC>9WF>[hn4End3
+!s100 J?;g?e20WeAfB>M]l^<EC0
+R7
+32
+R17
+!i10b 1
+R18
+R19
+R20
+!i113 1
+R12
+R13
+Ee_my_coffee_maker_fsm_vhd_tst
+Z21 w1591813474
+R3
+R4
+R0
+Z22 8C:/FPGA/FPGA_Excercises/07_Exercise_Sheet/07_Task_05/simulation/modelsim/e_my_coffee_maker_FSM.vht
+Z23 FC:/FPGA/FPGA_Excercises/07_Exercise_Sheet/07_Task_05/simulation/modelsim/e_my_coffee_maker_FSM.vht
+l0
+L31
+Vn75@mTVnGMh0]7i9G4^m=0
+!s100 Z]hj7iBB5P_8KQ`@[A7BB0
+R7
+32
+Z24 !s110 1591814840
+!i10b 1
+Z25 !s108 1591814840.000000
+Z26 !s90 -reportprogress|300|-work|work|C:/FPGA/FPGA_Excercises/07_Exercise_Sheet/07_Task_05/simulation/modelsim/e_my_coffee_maker_FSM.vht|
+Z27 !s107 C:/FPGA/FPGA_Excercises/07_Exercise_Sheet/07_Task_05/simulation/modelsim/e_my_coffee_maker_FSM.vht|
+!i113 1
+R12
+R13
+Ae_my_coffee_maker_fsm_arch
+R3
+R4
+Z28 DEx4 work 29 e_my_coffee_maker_fsm_vhd_tst 0 22 n75@mTVnGMh0]7i9G4^m=0
+l66
+L34
+Z29 VOao>_X6cCfXFh_UTZWcLz0
+Z30 !s100 deJeELVknH>O5N:88LN`]3
+R7
+32
+R24
+!i10b 1
+R25
+R26
+R27
+!i113 1
+R12
+R13
