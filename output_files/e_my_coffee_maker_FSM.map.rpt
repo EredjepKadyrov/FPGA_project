@@ -1,5 +1,5 @@
 Analysis & Synthesis report for e_my_coffee_maker_FSM
-Wed Jun 10 18:44:04 2020
+Sat Jul 04 21:02:56 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -15,16 +15,17 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. State Machine - |e_my_coffee_maker_FSM|coffee_maker_state
   9. Registers Removed During Synthesis
- 10. General Register Statistics
- 11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Parameter Settings for User Entity Instance: Top-level Entity: |e_my_coffee_maker_FSM
- 13. Parameter Settings for User Entity Instance: e_modulo_counter:I_count3
- 14. Parameter Settings for User Entity Instance: e_modulo_counter:I_count6
- 15. Port Connectivity Checks: "e_modulo_counter:I_count6"
- 16. Port Connectivity Checks: "e_modulo_counter:I_count3"
- 17. Post-Synthesis Netlist Statistics for Top Partition
- 18. Elapsed Time Per Partition
- 19. Analysis & Synthesis Messages
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: Top-level Entity: |e_my_coffee_maker_FSM
+ 14. Parameter Settings for User Entity Instance: e_modulo_counter:I_count3
+ 15. Parameter Settings for User Entity Instance: e_modulo_counter:I_count6
+ 16. Port Connectivity Checks: "e_modulo_counter:I_count6"
+ 17. Port Connectivity Checks: "e_modulo_counter:I_count3"
+ 18. Post-Synthesis Netlist Statistics for Top Partition
+ 19. Elapsed Time Per Partition
+ 20. Analysis & Synthesis Messages
 
 
 
@@ -50,14 +51,14 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Jun 10 18:44:03 2020       ;
+; Analysis & Synthesis Status     ; Successful - Sat Jul 04 21:02:55 2020       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; e_my_coffee_maker_FSM                       ;
 ; Top-level Entity Name           ; e_my_coffee_maker_FSM                       ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
 ; Total registers                 ; 70                                          ;
-; Total pins                      ; 58                                          ;
+; Total pins                      ; 166                                         ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -174,14 +175,14 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                          ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                   ; Library ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------+---------+
-; e_my_coffee_maker_FSM.vhd        ; yes             ; User VHDL File  ; C:/FPGA/FPGA_Excercises/07_Exercise_Sheet/07_Task_05/e_my_coffee_maker_FSM.vhd ;         ;
-; e_modulo_counter.vhd             ; yes             ; User VHDL File  ; C:/FPGA/FPGA_Excercises/07_Exercise_Sheet/07_Task_05/e_modulo_counter.vhd      ;         ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                     ;
++----------------------------------+-----------------+-----------------+-------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path              ; Library ;
++----------------------------------+-----------------+-----------------+-------------------------------------------+---------+
+; e_my_coffee_maker_FSM.vhd        ; yes             ; User VHDL File  ; C:/FPGA/Project/e_my_coffee_maker_FSM.vhd ;         ;
+; e_modulo_counter.vhd             ; yes             ; User VHDL File  ; C:/FPGA/Project/e_modulo_counter.vhd      ;         ;
++----------------------------------+-----------------+-----------------+-------------------------------------------+---------+
 
 
 +--------------------------------------------------------------+
@@ -189,25 +190,25 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 78             ;
+; Estimate of Logic utilization (ALMs needed) ; 76             ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 126            ;
+; Combinational ALUT usage for logic          ; 123            ;
 ;     -- 7 input functions                    ; 0              ;
 ;     -- 6 input functions                    ; 29             ;
-;     -- 5 input functions                    ; 15             ;
-;     -- 4 input functions                    ; 15             ;
-;     -- <=3 input functions                  ; 67             ;
+;     -- 5 input functions                    ; 18             ;
+;     -- 4 input functions                    ; 12             ;
+;     -- <=3 input functions                  ; 64             ;
 ;                                             ;                ;
 ; Dedicated logic registers                   ; 70             ;
 ;                                             ;                ;
-; I/O pins                                    ; 58             ;
+; I/O pins                                    ; 166            ;
 ;                                             ;                ;
 ; Total DSP Blocks                            ; 0              ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
 ; Maximum fan-out                             ; 70             ;
-; Total fan-out                               ; 822            ;
-; Average fan-out                             ; 2.63           ;
+; Total fan-out                               ; 919            ;
+; Average fan-out                             ; 1.75           ;
 +---------------------------------------------+----------------+
 
 
@@ -216,7 +217,7 @@ refer to the applicable agreement for further details.
 +--------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------+-----------------------+--------------+
 ; Compilation Hierarchy Node     ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                              ; Entity Name           ; Library Name ;
 +--------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------+-----------------------+--------------+
-; |e_my_coffee_maker_FSM         ; 126 (57)            ; 70 (13)                   ; 0                 ; 0          ; 58   ; 0            ; |e_my_coffee_maker_FSM                           ; e_my_coffee_maker_FSM ; work         ;
+; |e_my_coffee_maker_FSM         ; 123 (54)            ; 70 (13)                   ; 0                 ; 0          ; 166  ; 0            ; |e_my_coffee_maker_FSM                           ; e_my_coffee_maker_FSM ; work         ;
 ;    |e_modulo_counter:I_count3| ; 34 (34)             ; 28 (28)                   ; 0                 ; 0          ; 0    ; 0            ; |e_my_coffee_maker_FSM|e_modulo_counter:I_count3 ; e_modulo_counter      ; work         ;
 ;    |e_modulo_counter:I_count6| ; 35 (35)             ; 29 (29)                   ; 0                 ; 0          ; 0    ; 0            ; |e_my_coffee_maker_FSM|e_modulo_counter:I_count6 ; e_modulo_counter      ; work         ;
 +--------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------+-----------------------+--------------+
@@ -224,20 +225,21 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 
 
 Encoding Type:  One-Hot
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |e_my_coffee_maker_FSM|coffee_maker_state                                                                                                                                                                                                                           ;
-+----------------------------------+---------------------------+---------------------------+--------------------------------+---------------------------------+----------------------------------+---------------------------+----------------------------+---------------------------+
-; Name                             ; coffee_maker_state.S_DONE ; coffee_maker_state.S_TEST ; coffee_maker_state.S_PUMP_MILK ; coffee_maker_state.S_PUMP_WATER ; coffee_maker_state.S_CHOC_POWDER ; coffee_maker_state.S_BREW ; coffee_maker_state.S_GRIND ; coffee_maker_state.S_IDLE ;
-+----------------------------------+---------------------------+---------------------------+--------------------------------+---------------------------------+----------------------------------+---------------------------+----------------------------+---------------------------+
-; coffee_maker_state.S_IDLE        ; 0                         ; 0                         ; 0                              ; 0                               ; 0                                ; 0                         ; 0                          ; 0                         ;
-; coffee_maker_state.S_GRIND       ; 0                         ; 0                         ; 0                              ; 0                               ; 0                                ; 0                         ; 1                          ; 1                         ;
-; coffee_maker_state.S_BREW        ; 0                         ; 0                         ; 0                              ; 0                               ; 0                                ; 1                         ; 0                          ; 1                         ;
-; coffee_maker_state.S_CHOC_POWDER ; 0                         ; 0                         ; 0                              ; 0                               ; 1                                ; 0                         ; 0                          ; 1                         ;
-; coffee_maker_state.S_PUMP_WATER  ; 0                         ; 0                         ; 0                              ; 1                               ; 0                                ; 0                         ; 0                          ; 1                         ;
-; coffee_maker_state.S_PUMP_MILK   ; 0                         ; 0                         ; 1                              ; 0                               ; 0                                ; 0                         ; 0                          ; 1                         ;
-; coffee_maker_state.S_TEST        ; 0                         ; 1                         ; 0                              ; 0                               ; 0                                ; 0                         ; 0                          ; 1                         ;
-; coffee_maker_state.S_DONE        ; 1                         ; 0                         ; 0                              ; 0                               ; 0                                ; 0                         ; 0                          ; 1                         ;
-+----------------------------------+---------------------------+---------------------------+--------------------------------+---------------------------------+----------------------------------+---------------------------+----------------------------+---------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |e_my_coffee_maker_FSM|coffee_maker_state                                                                                                                                                                                                                                                         ;
++----------------------------------+---------------------------+---------------------------+--------------------------------+---------------------------------+----------------------------------+---------------------------+----------------------------+-----------------------------+---------------------------+
+; Name                             ; coffee_maker_state.S_DONE ; coffee_maker_state.S_TEST ; coffee_maker_state.S_PUMP_MILK ; coffee_maker_state.S_PUMP_WATER ; coffee_maker_state.S_CHOC_POWDER ; coffee_maker_state.S_BREW ; coffee_maker_state.S_GRIND ; coffee_maker_state.S_AMOUNT ; coffee_maker_state.S_IDLE ;
++----------------------------------+---------------------------+---------------------------+--------------------------------+---------------------------------+----------------------------------+---------------------------+----------------------------+-----------------------------+---------------------------+
+; coffee_maker_state.S_IDLE        ; 0                         ; 0                         ; 0                              ; 0                               ; 0                                ; 0                         ; 0                          ; 0                           ; 0                         ;
+; coffee_maker_state.S_AMOUNT      ; 0                         ; 0                         ; 0                              ; 0                               ; 0                                ; 0                         ; 0                          ; 1                           ; 1                         ;
+; coffee_maker_state.S_GRIND       ; 0                         ; 0                         ; 0                              ; 0                               ; 0                                ; 0                         ; 1                          ; 0                           ; 1                         ;
+; coffee_maker_state.S_BREW        ; 0                         ; 0                         ; 0                              ; 0                               ; 0                                ; 1                         ; 0                          ; 0                           ; 1                         ;
+; coffee_maker_state.S_CHOC_POWDER ; 0                         ; 0                         ; 0                              ; 0                               ; 1                                ; 0                         ; 0                          ; 0                           ; 1                         ;
+; coffee_maker_state.S_PUMP_WATER  ; 0                         ; 0                         ; 0                              ; 1                               ; 0                                ; 0                         ; 0                          ; 0                           ; 1                         ;
+; coffee_maker_state.S_PUMP_MILK   ; 0                         ; 0                         ; 1                              ; 0                               ; 0                                ; 0                         ; 0                          ; 0                           ; 1                         ;
+; coffee_maker_state.S_TEST        ; 0                         ; 1                         ; 0                              ; 0                               ; 0                                ; 0                         ; 0                          ; 0                           ; 1                         ;
+; coffee_maker_state.S_DONE        ; 1                         ; 0                         ; 0                              ; 0                               ; 0                                ; 0                         ; 0                          ; 0                           ; 1                         ;
++----------------------------------+---------------------------+---------------------------+--------------------------------+---------------------------------+----------------------------------+---------------------------+----------------------------+-----------------------------+---------------------------+
 
 
 +--------------------------------------------------------------------------------+
@@ -245,9 +247,20 @@ Encoding Type:  One-Hot
 +---------------------------------------+----------------------------------------+
 ; Register name                         ; Reason for Removal                     ;
 +---------------------------------------+----------------------------------------+
+; coffee_maker_state.S_AMOUNT           ; Stuck at GND due to stuck port data_in ;
 ; coffee_maker_state.S_TEST             ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 1 ;                                        ;
+; Total Number of Removed Registers = 2 ;                                        ;
 +---------------------------------------+----------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                      ;
++-----------------------------+---------------------------+----------------------------------------+
+; Register name               ; Reason for Removal        ; Registers Removed due to This Register ;
++-----------------------------+---------------------------+----------------------------------------+
+; coffee_maker_state.S_AMOUNT ; Stuck at GND              ; coffee_maker_state.S_TEST              ;
+;                             ; due to stuck port data_in ;                                        ;
++-----------------------------+---------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -256,7 +269,7 @@ Encoding Type:  One-Hot
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
 ; Total registers                              ; 70    ;
-; Number of registers using Synchronous Clear  ; 61    ;
+; Number of registers using Synchronous Clear  ; 57    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 70    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
@@ -265,15 +278,16 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                            ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output  ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
-; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |e_my_coffee_maker_FSM|HEX0 ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |e_my_coffee_maker_FSM|HEX0 ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |e_my_coffee_maker_FSM|HEX1 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |e_my_coffee_maker_FSM|HEX0       ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |e_my_coffee_maker_FSM|HEX0       ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |e_my_coffee_maker_FSM|HEX2       ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |e_my_coffee_maker_FSM|Selector13 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
 
 
 +---------------------------------------------------------------------------------------+
@@ -285,6 +299,7 @@ Encoding Type:  One-Hot
 ; k3             ; 150000000 ; Signed Integer                                           ;
 ; n6             ; 29        ; Signed Integer                                           ;
 ; k6             ; 300000000 ; Signed Integer                                           ;
+; n              ; 100       ; Signed Integer                                           ;
 +----------------+-----------+----------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -337,20 +352,20 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; arriav_ff             ; 70                          ;
-;     CLR               ; 9                           ;
-;     CLR SCLR          ; 61                          ;
-; arriav_lcell_comb     ; 134                         ;
+;     CLR               ; 13                          ;
+;     CLR SCLR          ; 57                          ;
+; arriav_lcell_comb     ; 131                         ;
 ;     arith             ; 57                          ;
 ;         1 data inputs ; 57                          ;
-;     normal            ; 77                          ;
+;     normal            ; 74                          ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 6                           ;
-;         2 data inputs ; 4                           ;
-;         3 data inputs ; 6                           ;
-;         4 data inputs ; 15                          ;
-;         5 data inputs ; 15                          ;
+;         2 data inputs ; 5                           ;
+;         3 data inputs ; 2                           ;
+;         4 data inputs ; 12                          ;
+;         5 data inputs ; 18                          ;
 ;         6 data inputs ; 29                          ;
-; boundary_port         ; 58                          ;
+; boundary_port         ; 166                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 4.00                        ;
 ; Average LUT depth     ; 3.12                        ;
@@ -362,7 +377,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -372,37 +387,154 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Wed Jun 10 18:43:18 2020
+    Info: Processing started: Sat Jul 04 21:02:32 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off e_my_coffee_maker_FSM -c e_my_coffee_maker_FSM
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file e_my_coffee_maker_fsm.vhd
-    Info (12022): Found design unit 1: e_my_coffee_maker_FSM-a_my_coffee_maker_FSM File: C:/FPGA/FPGA_Excercises/07_Exercise_Sheet/07_Task_05/e_my_coffee_maker_FSM.vhd Line: 22
-    Info (12023): Found entity 1: e_my_coffee_maker_FSM File: C:/FPGA/FPGA_Excercises/07_Exercise_Sheet/07_Task_05/e_my_coffee_maker_FSM.vhd Line: 4
+    Info (12022): Found design unit 1: e_my_coffee_maker_FSM-a_my_coffee_maker_FSM File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 26
+    Info (12023): Found entity 1: e_my_coffee_maker_FSM File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file e_modulo_counter.vhd
-    Info (12022): Found design unit 1: e_modulo_counter-a_modulo_counter File: C:/FPGA/FPGA_Excercises/07_Exercise_Sheet/07_Task_05/e_modulo_counter.vhd Line: 14
-    Info (12023): Found entity 1: e_modulo_counter File: C:/FPGA/FPGA_Excercises/07_Exercise_Sheet/07_Task_05/e_modulo_counter.vhd Line: 5
+    Info (12022): Found design unit 1: e_modulo_counter-a_modulo_counter File: C:/FPGA/Project/e_modulo_counter.vhd Line: 14
+    Info (12023): Found entity 1: e_modulo_counter File: C:/FPGA/Project/e_modulo_counter.vhd Line: 5
 Info (12127): Elaborating entity "e_my_coffee_maker_FSM" for the top level hierarchy
-Info (12128): Elaborating entity "e_modulo_counter" for hierarchy "e_modulo_counter:I_count3" File: C:/FPGA/FPGA_Excercises/07_Exercise_Sheet/07_Task_05/e_my_coffee_maker_FSM.vhd Line: 75
-Info (12128): Elaborating entity "e_modulo_counter" for hierarchy "e_modulo_counter:I_count6" File: C:/FPGA/FPGA_Excercises/07_Exercise_Sheet/07_Task_05/e_my_coffee_maker_FSM.vhd Line: 84
+Warning (10541): VHDL Signal Declaration warning at e_my_coffee_maker_FSM.vhd(15): used implicit default value for signal "serve" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 15
+Warning (10541): VHDL Signal Declaration warning at e_my_coffee_maker_FSM.vhd(15): used implicit default value for signal "change" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 15
+Warning (10631): VHDL Process Statement warning at e_my_coffee_maker_FSM.vhd(304): inferring latch(es) for signal or variable "sl_fsm_ready_int", which holds its previous value in one or more paths through the process File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 304
+Warning (10631): VHDL Process Statement warning at e_my_coffee_maker_FSM.vhd(304): inferring latch(es) for signal or variable "sl_fsm_done_int", which holds its previous value in one or more paths through the process File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 304
+Info (10041): Inferred latch for "sl_fsm_done_int" at e_my_coffee_maker_FSM.vhd(304) File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 304
+Info (10041): Inferred latch for "sl_fsm_ready_int" at e_my_coffee_maker_FSM.vhd(304) File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 304
+Info (12128): Elaborating entity "e_modulo_counter" for hierarchy "e_modulo_counter:I_count3" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 96
+Info (12128): Elaborating entity "e_modulo_counter" for hierarchy "e_modulo_counter:I_count6" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 105
+Warning (14026): LATCH primitive "sl_fsm_ready_int" is permanently enabled File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 61
+Warning (14026): LATCH primitive "sl_fsm_done_int" is permanently enabled File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 62
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "LEDR[5]" is stuck at GND File: C:/FPGA/FPGA_Excercises/07_Exercise_Sheet/07_Task_05/e_my_coffee_maker_FSM.vhd Line: 12
-    Warning (13410): Pin "LEDR[7]" is stuck at GND File: C:/FPGA/FPGA_Excercises/07_Exercise_Sheet/07_Task_05/e_my_coffee_maker_FSM.vhd Line: 12
-    Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/FPGA/FPGA_Excercises/07_Exercise_Sheet/07_Task_05/e_my_coffee_maker_FSM.vhd Line: 12
-    Warning (13410): Pin "HEX0[1]" is stuck at VCC File: C:/FPGA/FPGA_Excercises/07_Exercise_Sheet/07_Task_05/e_my_coffee_maker_FSM.vhd Line: 13
-    Warning (13410): Pin "HEX5[2]" is stuck at VCC File: C:/FPGA/FPGA_Excercises/07_Exercise_Sheet/07_Task_05/e_my_coffee_maker_FSM.vhd Line: 18
-    Warning (13410): Pin "HEX5[1]" is stuck at VCC File: C:/FPGA/FPGA_Excercises/07_Exercise_Sheet/07_Task_05/e_my_coffee_maker_FSM.vhd Line: 18
+    Warning (13410): Pin "serve" is stuck at GND File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 15
+    Warning (13410): Pin "change" is stuck at GND File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 15
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 16
+    Warning (13410): Pin "LEDR[7]" is stuck at GND File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 16
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 16
+    Warning (13410): Pin "HEX0[1]" is stuck at VCC File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 17
+    Warning (13410): Pin "HEX5[2]" is stuck at VCC File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 22
+    Warning (13410): Pin "HEX5[1]" is stuck at VCC File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 22
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 184 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 6 input pins
-    Info (21059): Implemented 52 output pins
-    Info (21061): Implemented 126 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 8 warnings
-    Info: Peak virtual memory: 4879 megabytes
-    Info: Processing ended: Wed Jun 10 18:44:04 2020
-    Info: Elapsed time: 00:00:46
-    Info: Total CPU time (on all processors): 00:00:50
+Warning (21074): Design contains 106 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "five_zent" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 13
+    Warning (15610): No output dependent on input pin "ten_zent" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 13
+    Warning (15610): No output dependent on input pin "quarter_zent" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 13
+    Warning (15610): No output dependent on input pin "one_euro" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 13
+    Warning (15610): No output dependent on input pin "dispense" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 13
+    Warning (15610): No output dependent on input pin "done" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 13
+    Warning (15610): No output dependent on input pin "price[0]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[1]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[2]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[3]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[4]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[5]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[6]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[7]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[8]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[9]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[10]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[11]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[12]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[13]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[14]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[15]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[16]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[17]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[18]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[19]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[20]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[21]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[22]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[23]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[24]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[25]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[26]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[27]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[28]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[29]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[30]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[31]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[32]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[33]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[34]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[35]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[36]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[37]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[38]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[39]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[40]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[41]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[42]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[43]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[44]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[45]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[46]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[47]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[48]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[49]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[50]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[51]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[52]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[53]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[54]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[55]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[56]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[57]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[58]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[59]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[60]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[61]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[62]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[63]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[64]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[65]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[66]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[67]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[68]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[69]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[70]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[71]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[72]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[73]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[74]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[75]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[76]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[77]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[78]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[79]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[80]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[81]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[82]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[83]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[84]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[85]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[86]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[87]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[88]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[89]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[90]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[91]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[92]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[93]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[94]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[95]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[96]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[97]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[98]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+    Warning (15610): No output dependent on input pin "price[99]" File: C:/FPGA/Project/e_my_coffee_maker_FSM.vhd Line: 14
+Info (21057): Implemented 289 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 112 input pins
+    Info (21059): Implemented 54 output pins
+    Info (21061): Implemented 123 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 123 warnings
+    Info: Peak virtual memory: 4860 megabytes
+    Info: Processing ended: Sat Jul 04 21:02:56 2020
+    Info: Elapsed time: 00:00:24
+    Info: Total CPU time (on all processors): 00:00:59
 
 

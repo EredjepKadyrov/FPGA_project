@@ -3,12 +3,16 @@ use ieee.std_logic_1164.all;
 
 entity e_my_coffee_maker_FSM is
 generic(	n3: positive := 28; k3: positive := 150000000;
-			n6: positive := 29; k6: positive := 300000000
+			n6: positive := 29; k6: positive := 300000000;
+			n: integer := 100
 		);
 port(
 			CLOCK_50:	in				std_logic;
 			SW:			in				std_logic_vector(9 downto 9);
 			KEY:		in				std_logic_vector(3 downto 0);
+			ten_zent, fifty_zent, one_euro, dispense, done: in std_logic; --dispense is pressed
+			price:                                 in std_logic_vector(n-1 downto 0);
+         serve, change:                         out std_logic; --selnext selects the next state for the amount variable
 			LEDR:		out				std_logic_vector(9 downto 0);
 			HEX0:		out				std_logic_vector(0 to 6);
 			HEX1:		out				std_logic_vector(0 to 6);
@@ -22,7 +26,7 @@ end entity e_my_coffee_maker_FSM;
 architecture a_my_coffee_maker_FSM of e_my_coffee_maker_FSM is
 
    -- Type Declaration
-   type t_coffee_maker_states is (S_IDLE, S_GRIND, S_BREW, S_CHOC_POWDER, S_PUMP_WATER, S_PUMP_MILK,S_TEST, S_DONE);
+   type t_coffee_maker_states is (S_IDLE, S_AMOUNT, S_GRIND, S_BREW, S_CHOC_POWDER, S_PUMP_WATER, S_PUMP_MILK,S_TEST, S_DONE);
    signal coffee_maker_state : t_coffee_maker_states;
 
    -- Component Declaration
@@ -36,6 +40,11 @@ architecture a_my_coffee_maker_FSM of e_my_coffee_maker_FSM is
    end component e_modulo_counter;
 
    -- Signal Declaration
+	signal enough, zero, sub: std_logic;
+   signal selval: std_logic_vector(3 downto 0);
+   signal selnext: std_logic_vector(2 downto 0);
+	
+	
    signal sl_Clock_int:			std_logic;
    signal sl_resetn_int:		std_logic;
     
@@ -62,6 +71,16 @@ architecture a_my_coffee_maker_FSM of e_my_coffee_maker_FSM is
    constant c_R: std_logic_vector(0 to 6) := "1111010";
    constant c_S: std_logic_vector(0 to 6) := "0100100";
    constant c_U: std_logic_vector(0 to 6) := "1000001";
+	
+	constant c_d: std_logic_vector(0 to 6) := "1000010";
+	constant c_G: std_logic_vector(0 to 6) := "0100001";
+	constant c_I: std_logic_vector(0 to 6) := "0000110";
+	constant c_J: std_logic_vector(0 to 6) := "1000011";
+	constant c_L: std_logic_vector(0 to 6) := "0001110";
+
+	
+	
+	
    constant c_dash:  std_logic_vector(0 to 6) := "1111110";
    constant c_blank:  std_logic_vector(0 to 6) := "1111111";
 
@@ -70,6 +89,8 @@ begin
    sl_resetn_int <= SW(9);
    sl_Clock_int <= CLOCK_50;
    slv_selection_int <= KEY;
+	
+	
 
    -- e_modulo_counter(n, k)(sl_clock, sl_reset_n, sl_enable, slv_Q, sl_rollover)   
    I_count3: e_modulo_counter
@@ -89,6 +110,10 @@ begin
 						slv_Q			=>		open,
 						sl_rollover	=>		sl_done6_int
 					);
+					
+					
+					
+					
 
    p_coffee_maker_FSM: process (sl_Clock_int, sl_resetn_int)
    begin
@@ -271,6 +296,10 @@ begin
 		 end case;
 	  end if;
    end process p_coffee_maker_FSM;
+	
+	
+	
+	
    
    p_coffee_maker_output: process (coffee_maker_state)
    begin
@@ -337,6 +366,10 @@ begin
          end if;
       end if;
    end process p_choice;
+	
+	
+	
+	
 	
    p_segments: process (sl_resetn_int, sl_coffee_int, sl_cappuccino_int, sl_espresso_int, sl_hot_chocolate_int)
    begin
